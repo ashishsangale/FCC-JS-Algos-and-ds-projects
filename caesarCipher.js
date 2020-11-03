@@ -1,12 +1,10 @@
 function rot13(str) {
   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    return str
-      .split('')
-      .map(char => {  
-        const pos = alphabet.indexOf(char);      
-        return pos >= 0 ? alphabet[(pos + 13) % 26] : char;
-      })
-      .join('');
+  let cipher = str.split('').map(i => {
+    const val = alphabet.indexOf(i);
+    return val >= 0 ? alphabet[(val + 13) % 26] : i;
+  })
+  return cipher.join('')
 }
 
 
